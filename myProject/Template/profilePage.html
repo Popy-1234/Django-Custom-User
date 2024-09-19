@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume View</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .resume-container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .resume-item {
+            margin-bottom: 15px;
+        }
+
+        .resume-item label {
+            font-weight: bold;
+        }
+
+        .resume-item p {
+            margin: 5px 0;
+        }
+
+        .divider {
+            border-top: 2px solid #007BFF;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PEOFILE VIEW</h1>
+
+        <div class="profile-header">
+            <img src="/{{ Information.profile_pic}}" alt="profile_pic" class="profile_pic">
+
+        
+        
+
+        <div class="resume-item">
+            <label for="contact">:</label>
+            <p id="contact">{{Information.user.first_name }}</p>
+        </div>
+
+        <div class="resume-item">
+            <label for="contact">:</label>
+            <p id="contact">{{Information.user.last_name }}</p>
+        </div>
+
+        <div class="resume-item"></div>
+            <label for="contact">Email:</label>
+            <p id="contact">{{Information.user.email }}</p>
+        </div>
+
+
+        <div class="resume-item">
+            <label for="contact">Contact:</label>
+            <p id="contact">{{ Information.contact_no }}</p>
+        </div>
+
+        <div class="resume-item">
+            <label for="age">Age:</label>
+            <p id="age">{{ Information.age }}</p>
+        </div>
+
+        <div class="resume-item">
+            <label for="designation">Designation:</label>
+            <p id="designation">{{ Information.designation }}</p>
+        </div>
+
+        <div class="resume-item">
+            <label for="gender">Gender:</label>
+            <p id="gender">{{ Information.gender }}</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="resume-item">
+            <label for="career_summary">Career Summary:</label>
+            <p id="career_summary">{{Information.carrer_summary }}</p>
+        </div>
+
+        <div class="resume-item">
+            <label for="language_name">Language:</label>
+            <p>Language:{% for i in Language %}{{i.language_name}}{% endfor %}</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+{% endblock body %}
+    

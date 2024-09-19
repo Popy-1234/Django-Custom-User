@@ -1,0 +1,25 @@
+<div class="navbar">
+    
+    {% if user.usertype == 'viewer' %}
+
+    <a href="{% url 'createResume' %}">Creat Resume</a>
+
+    {% elif user.usertype == 'admin' %}
+    
+    <div class="dropdown">
+      <button class="dropbtn">Add list 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Add Skill</a>
+        <a href="#">Add Education</a>
+        <a href="#">Add Interest</a>
+        <a href="#">Add Language</a>
+      </div>
+    </div>
+    {% endif %}
+    
+      <a href="{% url 'profilePage' %}">Profile Page</a>
+      <a href="{% url 'addLanguage' %}">AddLanguage Page</a>
+      <a href="{% url 'logoutPage' %}">Logout</a>
+  </div>
